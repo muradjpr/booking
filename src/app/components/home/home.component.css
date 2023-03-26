@@ -1,0 +1,26 @@
+.p-magamenu-panel {
+  width: 1299px;
+  margin-left: -11px;
+  border: 1px solid #ddd;
+  border-top: 0;
+
+}
+
+.form-header {
+  background: #1f58f2
+}
+.form-header a {
+  border-right: 1px solid #fff;
+  color: #fff
+
+}
+
+
+.form-header a:hover {
+  background: #fff;
+  color: #666;
+}
+
+.form-header a:last-child {
+  border-right: 0px solid #fff;
+}

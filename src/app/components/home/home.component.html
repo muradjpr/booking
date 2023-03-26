@@ -1,0 +1,101 @@
+<div class="row">
+  <div class="col flex justify-content-start gap-3">
+    <span class="p-input-icon-right">
+      <i class="pi pi-search"></i>
+      <input type="text" placeholder="Name/PNR/Booking Ref" pInputText [(ngModel)]="searchValue" />
+    </span>
+    <p-button label="Flyhub APISandbox"  styleClass="p-button-outlined p-button-secondary"><i class="pi pi-box mr-3"></i></p-button>
+  </div>
+  <div class="col flex justify-content-end gap-3">
+
+    <div class="flex justify-content-center gap-2 align-items-center text-white">
+      <i class="pi pi-user"></i>
+      <a href="#" class="text-decoration-none text-white">Mr Your name</a>
+      <i class="pi pi-angle-down mt-1"></i>
+    </div>
+    <p-button label="Flyhub APISandbox"  styleClass="p-button-outlined p-button-secondary"><i class="pi pi-box mr-3"></i></p-button>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col">
+    <p class="alert alert-danger text-center p-2">this is an alert</p>
+  </div>
+</div>
+
+<div class="row mt-7">
+  <div class="col">
+    <div class="form-header flex justify-content-start align-items-center rounded-top m-0">
+      <a
+        href="#"
+        class="form-header-manu-item px-3 py-3 text-decoration-none fw-bold "
+        (click)="onClick('flights')"
+        [class.bg-white] = "menuHeader == 'flights'"
+        [class.text-dark] = "menuHeader == 'flights'"
+        [class.rounded-start] = "menuHeader == 'flights'"
+      >
+          <i class="pi pi-box mr-2"> </i>
+        Flights
+      </a>
+
+      <a
+        href="#"
+        class="form-header-manu-item px-3 py-3 text-decoration-none fw-bold "
+        (click)="onClick('visa')"
+        [class.bg-white] = "menuHeader == 'visa'"
+        [class.text-dark] = "menuHeader == 'visa'"
+      >
+        <i class="pi pi-credit-card mr-2"> </i>
+        Visa
+      </a>
+
+      <a
+        href="#"
+        class="form-header-manu-item px-3 py-3 text-decoration-none fw-bold "
+        (click)="onClick('tours')"
+        [class.bg-white] = "menuHeader == 'tours'"
+        [class.text-dark] = "menuHeader == 'tours'"
+      >
+        <i class="pi pi-send mr-2"> </i>
+        Tours
+      </a>
+
+    </div>
+    <div class="bg-white p-3 rounded-bottom">
+      <form>
+        <div *ngIf="menuHeader == 'flights'">
+          <div class="flex flex-wrap gap-3">
+            <div class="flex align-items-center">
+              <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+              <label class="ml-2">Return</label>
+            </div>
+            <div class="flex align-items-center">
+              <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+              <label class="ml-2">One Way</label>
+            </div>
+            <div class="flex align-items-center">
+              <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+              <label class="ml-2">Multiway</label>
+            </div>
+            <div>
+              <p-multiSelect>
+
+              </p-multiSelect>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div *ngIf="menuHeader == 'tours'">
+          <p>heloo tours</p>
+        </div>
+
+      </form>
+    </div>
+
+
+  </div>
+</div>
+
+

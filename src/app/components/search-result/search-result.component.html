@@ -1,0 +1,263 @@
+<div class="bg-secondary vh-100">
+  <div class="">
+
+
+
+
+
+
+  </div>
+  <section class=" container">
+    <div>
+      <p-card header="Title">
+        <div class="flex justify-content-between">
+          <div>
+            <p>From</p>
+            <h5>Dhaka - Dubai</h5>
+            <p>Depart</p>
+            <h5>Feb 23, 2023</h5>
+          </div>
+          <div>
+            <p>From</p>
+            <h5>Dubai - Dhaka</h5>
+            <p>Return</p>
+            <h5>Mar 12, 2023</h5>
+          </div>
+          <div class="flex gap-2 ">
+
+            <p-button   styleClass="p-button-outlined p-button-danger"><i class="pi pi-star-fill mr-2"></i> Add To Saved</p-button>
+            <p-button  styleClass="p-button-outlined"><i class="pi pi-print"></i></p-button>
+            <p-button  styleClass="p-button-raised p-button-primary"><i class="pi pi-pencil mr-2"></i> Change</p-button>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </section>
+
+  <section class="container my-3">
+
+    <p-carousel [value]="products" [numVisible]="8" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
+      <ng-template let-product pTemplate="item" >
+        <div class="product-item fs-6">
+          <div class="product-item-content border ps-3 mx-1 rounded gap-3 flex text-center bg-white">
+            <div class="justify-content-center align-self-center">
+              <i class="pi pi-pencil"></i>
+            </div>
+            <div class="justify-content-center align-self-center">
+              <h6>{{product.code}}</h6>
+              <p>{{product.price}}</p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </section>
+
+  <section class="container my-3">
+
+
+    <div class="grid gap-3">
+      <!--        first column-->
+      <div class="col-3  ">
+        <p-scrollPanel [style]="{ width: '100%', height: '250px' }">
+          <div class="flex flex-column gap-3 bg-white rounded h-auto p-2">
+            <div class="flex justify-content-between ">
+              <h5 class="text-dark">Filter</h5>
+              <a href="#">Reset All</a>
+            </div>
+            <div class="border rounded p-2">
+              <div class="flex justify-content-between">
+                <p>Popular Filter</p>
+                <i  class="pi pi-minus mt-2"></i>
+              </div>
+
+              <div class="">
+                <form class="flex align-items-center gap-1">
+                  <p-checkbox formControlName="city" value="New York" inputId="ny"></p-checkbox>
+                  <label for="ny">New York</label>
+                </form>
+              </div>
+            </div>
+
+            <div class="border rounded p-2">
+              <div class="flex justify-content-between">
+                <p>Stops</p>
+                <i  class="pi pi-minus mt-2"></i>
+              </div>
+
+              <div class="flex justify-content-between">
+                <a href="#" class="rounded border p-2 text-decoration-none">Non stop</a>
+                <a href="#" class="rounded border p-2 text-decoration-none">One stop</a>
+                <a href="#" class="rounded border p-2 text-decoration-none">Two stop</a>
+              </div>
+            </div>
+            <div class="border rounded p-2">
+              <div class="flex justify-content-between">
+                <p>Stops</p>
+                <i  class="pi pi-minus mt-2"></i>
+              </div>
+
+              <div class="flex justify-content-between">
+                <a href="#" class="rounded border p-2 text-decoration-none">Non stop</a>
+                <a href="#" class="rounded border p-2 text-decoration-none">One stop</a>
+                <a href="#" class="rounded border p-2 text-decoration-none">Two stop</a>
+              </div>
+            </div>
+          </div>
+        </p-scrollPanel>
+      </div>
+
+      <!--        end first column-->
+
+      <div class="col">
+        <div class="">
+          <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
+        </div>
+
+        <div class="flex justify-content-between my-3 ">
+          <p>this is some text</p>
+          <div class="flex flex-row gap-2 ">
+            <p class="align-self-center pt-3 mr-3">Sort By</p>
+            <p-button   styleClass="p-button-raised p-button-primary"><i class="pi pi-star-fill mr-2"></i> Invoice Amount</p-button>
+            <p-button  styleClass="p-button-raised p-button-primary"><i class="pi pi-print mr-2"></i>Select</p-button>
+            <p-button  styleClass="p-button-raised p-button-primary"><i class="pi pi-pencil mr-2"></i> Cheapest First</p-button>
+          </div>
+        </div>
+        <!--flight list-->
+        <div class="">
+          <div class="border rounded p-2 bg-white my-3 p-2">
+            <div class="row">
+              <!--                  depart column-->
+              <div class="col">
+                <div class="flex gap-3 align-items-center">
+                  <form class="flex align-items-center gap-1">
+                    <p-checkbox formControlName="city" value="New York" inputId="ny"></p-checkbox>
+                  </form>
+                  <i class="pi pi-send"> </i>
+                  <div>
+                    <h4 class="fs-6">Malaysia Airlines</h4>
+                    <span class="fs-6">MH23 | MH654 | MS45646</span>
+                  </div>
+                </div>
+                <div class="py-2">
+                  <p class="alert alert-info"><span class="fw-bold mr-2">Depart</span> <span>Wed, 23 Mar | Malaysia Airlines</span></p>
+                </div>
+                <div class="flex flex-row justify-content-between align-items-center gap-3">
+                  <div>
+                    <h6>DAC <span>1930 hrs</span></h6>
+                    <p>Dhaka</p>
+                  </div>
+                  <div class="flex flex-column text-center ">
+                    <p class="m-0"> 15h 34m</p>
+                    <div class="flex justify-content-center align-items-center">
+                      <i class="pi pi-send"></i>
+                      <p-divider  class="w-100"></p-divider>
+                      <i class="pi pi-circle-fill"></i>
+                    </div>
+                    <span class="text-info fs-6"> 1 stop via Kualalampur</span>
+
+                  </div>
+                  <div>
+                    <h6>DAC <span>1930 hrs</span></h6>
+                    <p>Dhaka</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1">
+                <p-divider layout="vertical" class="w-5"></p-divider>
+              </div>
+              <!--return column-->
+              <div class="col">
+                <div class="flex gap-3 align-items-center">
+                  <form class="flex align-items-center gap-1">
+                    <p-checkbox formControlName="city" value="New York" inputId="ny"></p-checkbox>
+                  </form>
+                  <i class="pi pi-send"> </i>
+                  <div>
+                    <h4 class="fs-6">Malaysia Airlines</h4>
+                    <span class="fs-6">MH23 | MH654 | MS45646</span>
+                  </div>
+                </div>
+                <div class="py-2">
+                  <p class="alert alert-info"><span class="fw-bold mr-2">Return </span> <span>Wed, 23 Mar | Malaysia Airlines</span></p>
+                </div>
+                <div class="flex flex-row justify-content-between align-items-center gap-3">
+                  <div>
+                    <h6>DAC <span>1930 hrs</span></h6>
+                    <p>Dhaka</p>
+                  </div>
+                  <div class="flex flex-column text-center ">
+                    <p class="m-0"> 15h 34m</p>
+                    <div class="flex justify-content-center align-items-center">
+                      <i class="pi pi-send"></i>
+                      <p-divider  class="w-100"></p-divider>
+                      <i class="pi pi-circle-fill"></i>
+                    </div>
+                    <span class="text-info fs-6"> 1 stop via Kualalampur</span>
+
+                  </div>
+                  <div>
+                    <h6>DAC <span>1930 hrs</span></h6>
+                    <p>Dhaka</p>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div >
+              <p-divider  class="w-5"></p-divider>
+            </div>
+
+            <div class="row flex justify-content-between">
+              <div class="col">
+                <div class="flex flex-row gap-3 align-items-center">
+                  <p-tag value="Private"></p-tag>
+                  <i class="pi pi-wifi"></i>
+                  <i class="pi pi-video"></i>
+                  <i class="pi pi-sitemap"></i>
+                  <i class="pi pi-calendar"></i>
+                </div>
+              </div>
+              <div class="col">
+                <a href="#">Flight Details</a>
+              </div>
+            </div>
+            <div class="row">
+
+              <p-tabMenu [model]="items" [activeItem]="activeItem" (activeItemChange)="onActiveItemChange($event)">
+                <ng-template >
+                  <h3>hello</h3>
+                </ng-template>
+              </p-tabMenu>
+
+              <p>JWT functionality#
+                We're ready to move on to the JWT portion of our auth system. Let's review and refine our requirements:
+
+                Allow users to authenticate with username/password, returning a JWT for use in subsequent calls to protected API endpoints. We're well on our way to meeting this requirement. To complete it, we'll need to write the code that issues a JWT.
+                Create API routes which are protected based on the presence of a valid JWT as a bearer token
+                We'll need to install a couple more packages to support our JWT requirements:JWT functionality#
+                We're ready to move on to the JWT portion of our auth system. Let's review and refine our requirements:
+
+                Allow users to authenticate with username/password, returning a JWT for use in subsequent calls to protected API endpoints. We're well on our way to meeting this requirement. To complete it, we'll need to write the code that issues a JWT.
+                Create API routes which are protected based on the presence of a valid JWT as a bearer token
+                We'll need to install a couple more packages to support our JWT requirements:JWT functionality#
+                We're ready to move on to the JWT portion of our auth system. Let's review and refine our requirements:
+
+                Allow users to authenticate with username/password, returning a JWT for use in subsequent calls to protected API endpoints. We're well on our way to meeting this requirement. To complete it, we'll need to write the code that issues a JWT.
+                Create API routes which are protected based on the presence of a valid JWT as a bearer token
+                We'll need to install a couple more packages to support our JWT requirements:</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+</div>
+
+
+
