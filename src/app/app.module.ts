@@ -28,7 +28,15 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { InputTextModule } from 'primeng/inputtext';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { ToolbarModule } from 'primeng/toolbar';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { TabViewModule } from 'primeng/tabview';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { DropdownModule } from 'primeng/dropdown';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 
 
 
@@ -38,7 +46,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
     AppComponent,
     HomeComponent,
     SearchResultComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +72,15 @@ import { MultiSelectModule } from 'primeng/multiselect';
     InputTextModule,
     MegaMenuModule,
     RadioButtonModule,
-    MultiSelectModule
+    OverlayPanelModule,
+    MultiSelectModule,
+    ToolbarModule,
+    SplitButtonModule,
+    TabViewModule,
+    CascadeSelectModule,
+    DropdownModule,
+    CheckboxModule,
+    AutoCompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

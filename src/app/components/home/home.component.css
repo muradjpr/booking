@@ -24,3 +24,19 @@
 .form-header a:last-child {
   border-right: 0px solid #fff;
 }
+
+.bookingArea {
+  margin-top: 31px;
+}
+
+.formArea {
+  margin-top: -7px
+}
+  input.p-inputtext {
+  border-radius: 0px !important;
+  margin: 0;
+  border: 0px !important;
+  border-bottom: 1px solid #000 !important;
+}
+
+

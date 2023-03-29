@@ -16,14 +16,14 @@
     <p-button label="Flyhub APISandbox"  styleClass="p-button-outlined p-button-secondary"><i class="pi pi-box mr-3"></i></p-button>
   </div>
 </div>
-
+<!--alert area-->
 <div class="row mt-4">
   <div class="col">
     <p class="alert alert-danger text-center p-2">this is an alert</p>
   </div>
 </div>
-
-<div class="row mt-7">
+<!--Booking form area-->
+<div class="row bookingArea">
   <div class="col">
     <div class="form-header flex justify-content-start align-items-center rounded-top m-0">
       <a
@@ -61,37 +61,145 @@
       </a>
 
     </div>
-    <div class="bg-white p-3 rounded-bottom">
-      <form>
-        <div *ngIf="menuHeader == 'flights'">
-          <div class="flex flex-wrap gap-3">
-            <div class="flex align-items-center">
-              <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
-              <label class="ml-2">Return</label>
-            </div>
-            <div class="flex align-items-center">
-              <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
-              <label class="ml-2">One Way</label>
-            </div>
-            <div class="flex align-items-center">
-              <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
-              <label class="ml-2">Multiway</label>
+    <div class="formArea bg-white p-3 rounded-bottom">
+
+        <div *ngIf="menuHeader == 'flights'" class="flex flex-column gap-4">
+<!--          search form area-->
+          <div class="flex flex-wrap justify-content-between align-items-center gap-4">
+            <div class="flex justify-content-between gap-4 align-items-center">
+              <div class="flex align-items-center">
+                <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+                <label class="ml-2">Return</label>
+              </div>
+              <div class="flex align-items-center">
+                <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+                <label class="ml-2">One Way</label>
+              </div>
+              <div class="flex align-items-center">
+                <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+                <label class="ml-2">Multiway</label>
+              </div>
+              <div>
+                <div class="card flex justify-content-center">
+                  <p-overlayPanel #op [style]="{'width': '250px'}" [showCloseIcon]="true">
+                    <div class="">
+                      <div class="flex flex-row justify-content-between align-items-center">
+                        <h6>Adult</h6>
+                        <div class="flex flex-row gap-3 justify-content-between align-items-center">
+                          <i class="pi pi-minus-circle" type="button" (click)="adultDecrease()" ></i>
+                          <span>{{adult}}</span>
+                          <i class="pi pi-plus-circle" type="button" (click)="adultIncrease()"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <p-divider></p-divider>
+                      </div>
+                      <div class="flex flex-row justify-content-between align-items-center">
+                        <h6>Child</h6>
+                        <div class="flex flex-row gap-3 justify-content-between align-items-center">
+                          <i class="pi pi-minus-circle" type="button" (click)="childDecrease()" ></i>
+                          <span>{{child}}</span>
+                          <i class="pi pi-plus-circle" type="button" (click)="childIncrease()"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <p-divider></p-divider>
+                      </div>
+                      <div class="flex flex-row justify-content-between align-items-center">
+                        <h6>Infant</h6>
+                        <div class="flex flex-row gap-3 justify-content-between align-items-center">
+                          <i class="pi pi-minus-circle" type="button" (click)="infantDecrease()" ></i>
+                          <span>{{infant}}</span>
+                          <i class="pi pi-plus-circle" type="button" (click)="infantIncrease()"></i>
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </p-overlayPanel>
+                  <p-button (click)="op.toggle($event)" icon="pi pi-image" [label]=" passengerTitle"></p-button>
+                </div>
+              </div>
+              <div>
+
+                <p-dropdown [options]="cities" [style]="{'width': '200px'}" [(ngModel)]="selectedCity" optionLabel="name"></p-dropdown>
+              </div>
+              <div class="flex align-items-center">
+
+
+                <form class="flex align-items-center gap-1" >
+                  <p-checkbox  value="New York" inputId="ny"></p-checkbox>
+                  <label class="ml-2">Advance Search</label>
+                </form>
+              </div>
             </div>
             <div>
-              <p-multiSelect>
-
-              </p-multiSelect>
+              <a class="text-decoration-none text-dark fw-semibold" href="#">Saved <span>0</span> <i class="pi pi-angle-down"></i></a>
             </div>
           </div>
-          <div></div>
-          <div></div>
-          <div></div>
+<!--          formInput-->
+          <div class="flex justify-content-between align-items-center gap-3">
+           <div class="flex justify-content-between align-items-center gap-4">
+             <div>
+               <h5 class="headText1">From</h5>
+               <p-autoComplete
+                 class="searchInput"
+                 [(ngModel)]="selectedCountry"
+                 [suggestions]="filteredCountries"
+                 (completeMethod)="filterCountry($event)"
+                 field="name"
+                 placeholder="Enter city/ Airport name"
+
+               >
+
+               </p-autoComplete>
+             </div>
+             <div class="mt-4 flex align-items-center ">
+               <i class="pi pi-arrow-right-arrow-left"></i>
+             </div>
+             <div>
+               <h5 class="headText1">To</h5>
+               <input type="text" type="text" placeholder="Enter City/ Airport Name" class="form-control">
+             </div>
+           </div>
+           <div class="flex justify-content-around align-items-center gap-4">
+             <div>
+               <h5 class="headText1">Departure Date</h5>
+               <input type="text" type="text" placeholder="Enter City/ Airport Name" class="form-control">
+             </div>
+             <div>
+               <h5 class="headText1">Returning Date</h5>
+               <input type="text" type="text" placeholder="Enter City/ Airport Name" class="form-control">
+             </div>
+             <div>
+               <h5 class="headText1">Prefered Airline</h5>
+               <input type="text" type="text" placeholder="Enter City/ Airport Name" class="form-control">
+             </div>
+           </div>
+          </div>
+          <div class="flex gap-4">
+            <h5 class="headText1">Select A Fare Type:</h5>
+            <div *ngFor="let category of categories" class="field-checkbox">
+              <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory"></p-radioButton>
+              <label [for]="category.key" class="ml-2">{{ category.name }}</label>
+            </div>
+
+
+          </div>
+          <div class="my-3">
+            <button routerLink="/search-result" class="btn btn-primary flex align-items-center justify-content-center"[style]="{'width': '200px'}" >Search Flights <i class="pi pi-send ml-3"></i></button>
+          </div>
         </div>
+      <!--      Visa area-->
+      <div *ngIf="menuHeader == 'visa'">
+        <p>heloo visa</p>
+      </div>
+<!--      tours area-->
         <div *ngIf="menuHeader == 'tours'">
           <p>heloo tours</p>
         </div>
 
-      </form>
+
     </div>
 
 
