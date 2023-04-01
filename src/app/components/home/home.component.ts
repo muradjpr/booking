@@ -1,16 +1,12 @@
-import {AfterViewInit, Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
-import { MegaMenuItem, MenuItem} from "primeng/api";
+import { Component, OnInit} from '@angular/core';
+import { MegaMenuItem} from "primeng/api";
 
-function addPassenger() {
 
-}
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
   searchValue!: any;

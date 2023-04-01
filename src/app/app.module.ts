@@ -36,7 +36,12 @@ import { TabViewModule } from 'primeng/tabview';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { StyleClassModule } from 'primeng/styleclass';
 import { SearchFormComponent } from './components/search-form/search-form.component';
+import { SearchInfoComponent } from './components/search-info/search-info.component';
+import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
+import { ListPageComponent } from './components/list-page/list-page.component';
+import { CarouselSliderComponent } from './components/carousel-slider/carousel-slider.component';
 
 
 
@@ -47,7 +52,11 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
     HomeComponent,
     SearchResultComponent,
     HeaderComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    SearchInfoComponent,
+    MainNavbarComponent,
+    ListPageComponent,
+    CarouselSliderComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +89,8 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
     CascadeSelectModule,
     DropdownModule,
     CheckboxModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    StyleClassModule
   ],
   providers: [],
   bootstrap: [AppComponent]

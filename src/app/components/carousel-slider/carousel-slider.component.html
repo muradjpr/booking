@@ -1,0 +1,13 @@
+<section>
+  <p-carousel [value]="items" [numVisible]="9" [numScroll]="1" [responsiveOptions]="responsiveOptions" >
+    <ng-template let-item pTemplate="item" >
+      <div class="border rounded-1 mx-1 flex justify-content-start px-3 py-1 align-items-center gap-3" >
+        <i class="pi pi-pencil"></i>
+        <div class="flex-column flex justify-content-start">
+          <h5>{{item.name}}</h5>
+          <h5>{{item.code}}</h5>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</section>

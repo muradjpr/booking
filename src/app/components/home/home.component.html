@@ -1,21 +1,4 @@
-<div class="row">
-  <div class="col flex justify-content-start gap-3">
-    <span class="p-input-icon-right">
-      <i class="pi pi-search"></i>
-      <input type="text" placeholder="Name/PNR/Booking Ref" pInputText [(ngModel)]="searchValue" />
-    </span>
-    <p-button label="Flyhub APISandbox"  styleClass="p-button-outlined p-button-secondary"><i class="pi pi-box mr-3"></i></p-button>
-  </div>
-  <div class="col flex justify-content-end gap-3">
 
-    <div class="flex justify-content-center gap-2 align-items-center text-white">
-      <i class="pi pi-user"></i>
-      <a href="#" class="text-decoration-none text-white">Mr Your name</a>
-      <i class="pi pi-angle-down mt-1"></i>
-    </div>
-    <p-button label="Flyhub APISandbox"  styleClass="p-button-outlined p-button-secondary"><i class="pi pi-box mr-3"></i></p-button>
-  </div>
-</div>
 <!--alert area-->
 <div class="row mt-4">
   <div class="col">
@@ -186,8 +169,9 @@
 
 
           </div>
-          <div class="my-3">
-            <button routerLink="/search-result" class="btn btn-primary flex align-items-center justify-content-center"[style]="{'width': '200px'}" >Search Flights <i class="pi pi-send ml-3"></i></button>
+          <div class="my-3 flex justify-content-between align-items-center">
+            <p-button routerLink="/search-result" icon="pi pi-send" label="Search Flights" styleClass="p-button-sm p-button-raised"></p-button>
+            <p-button routerLink="/contact" label="Go To Contact Page"></p-button>
           </div>
         </div>
       <!--      Visa area-->

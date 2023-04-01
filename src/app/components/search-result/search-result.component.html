@@ -1,41 +1,6 @@
-<div class="bg-secondary vh-100">
-  <div class="">
-
-
-
-
-
-
-  </div>
-  <section class=" container">
-    <div>
-      <p-card header="Title">
-        <div class="flex justify-content-between">
-          <div>
-            <p>From</p>
-            <h5>Dhaka - Dubai</h5>
-            <p>Depart</p>
-            <h5>Feb 23, 2023</h5>
-          </div>
-          <div>
-            <p>From</p>
-            <h5>Dubai - Dhaka</h5>
-            <p>Return</p>
-            <h5>Mar 12, 2023</h5>
-          </div>
-          <div class="flex gap-2 ">
-
-            <p-button   styleClass="p-button-outlined p-button-danger"><i class="pi pi-star-fill mr-2"></i> Add To Saved</p-button>
-            <p-button  styleClass="p-button-outlined"><i class="pi pi-print"></i></p-button>
-            <p-button  styleClass="p-button-raised p-button-primary"><i class="pi pi-pencil mr-2"></i> Change</p-button>
-          </div>
-        </div>
-      </p-card>
-    </div>
-  </section>
+<app-search-info></app-search-info>
 
   <section class="container my-3">
-
     <p-carousel [value]="products" [numVisible]="8" [numScroll]="3" [circular]="false" [responsiveOptions]="responsiveOptions">
       <ng-template let-product pTemplate="item" >
         <div class="product-item fs-6">
@@ -54,8 +19,6 @@
   </section>
 
   <section class="container my-3">
-
-
     <div class="grid gap-3">
       <!--        first column-->
       <div class="col-3  ">
@@ -118,9 +81,9 @@
           <p>this is some text</p>
           <div class="flex flex-row gap-2 ">
             <p class="align-self-center pt-3 mr-3">Sort By</p>
-            <p-button   styleClass="p-button-raised p-button-primary"><i class="pi pi-star-fill mr-2"></i> Invoice Amount</p-button>
-            <p-button  styleClass="p-button-raised p-button-primary"><i class="pi pi-print mr-2"></i>Select</p-button>
-            <p-button  styleClass="p-button-raised p-button-primary"><i class="pi pi-pencil mr-2"></i> Cheapest First</p-button>
+            <p-button styleClass="p-button-raised p-button-primary"><i class="pi pi-star-fill mr-2"></i> Invoice Amount</p-button>
+            <p-button styleClass="p-button-raised p-button-primary"><i class="pi pi-print mr-2"></i>Select</p-button>
+            <p-button styleClass="p-button-raised p-button-primary"><i class="pi pi-pencil mr-2"></i> Cheapest First</p-button>
           </div>
         </div>
         <!--flight list-->
@@ -131,7 +94,7 @@
               <div class="col">
                 <div class="flex gap-3 align-items-center">
                   <form class="flex align-items-center gap-1">
-                    <p-checkbox formControlName="city" value="New York" inputId="ny"></p-checkbox>
+                    <p-checkbox styleClass="p-checkbox-primary"></p-checkbox>
                   </form>
                   <i class="pi pi-send"> </i>
                   <div>
@@ -170,7 +133,7 @@
               <div class="col">
                 <div class="flex gap-3 align-items-center">
                   <form class="flex align-items-center gap-1">
-                    <p-checkbox formControlName="city" value="New York" inputId="ny"></p-checkbox>
+                    <p-checkbox styleClass="p-checkbox-primary" formControlName="city2" ></p-checkbox>
                   </form>
                   <i class="pi pi-send"> </i>
                   <div>
@@ -202,8 +165,6 @@
                   </div>
                 </div>
               </div>
-
-
             </div>
 
             <div >
@@ -257,7 +218,7 @@
 
   </section>
 
-</div>
+
 
 
 

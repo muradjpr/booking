@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
 /*@import "primeng/resources/themes/lara-light-blue/theme.css";*/
 /*@import "primeng/resources/primeng.css";*/
 /*@import "primeicons/primeicons.css";*/
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap');
 
 
 * {
@@ -14,9 +14,37 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-.headText1 {
+.p-card-body {
+  padding-top: .5rem !important;
+  padding-bottom: .5rem !important;
+}
+
+.p-carousel .p-carousel-indicators {
+  display: none !important;
+}
+
+h5 {
   font-size: 14px;
   font-weight: 600;
+  color: #666
 }
+.h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d6d6d6
+}
+.h6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d6d6d6
+}
+
+
 
 
